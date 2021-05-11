@@ -25,8 +25,8 @@
                     <nav class="divTable">
                         <ul class="divTableRow">
                             <li class="divTableCell"><a href="index.php">صفحه اصلی</a></li>
-                            <li class="divTableCell"><a href="">عضویت در سایت</a></li>
-                            <li class="divTableCell"><a href="">ورود به سایت</a></li>
+                            <li class="divTableCell"><a href="register.php">عضویت در سایت</a></li>
+                            <li class="divTableCell"><a href="login.php">ورود به سایت</a></li>
                             <li class="divTableCell"><a href="">درباره ما</a></li>
                             <li class="divTableCell"><a href="">ارتباط با ما</a></li>
                         </ul>
