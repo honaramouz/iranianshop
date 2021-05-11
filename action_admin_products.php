@@ -32,13 +32,13 @@ $target_file = $target_dir . basename($_FILES["pro_image"]["name"]);
 $uploadOk= 1;
 $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
 $check = getimagesize($_FILES["pro_image"]["tmp_name"]);
-if($check !== false){
+/*if($check !== false){
   echo "پرونده انتخابی یک نوع تصویر از نوع - " . $check["mime"] . "است <br>";
   $uploadOk=1;
 }else {
     echo "پرونده انتخاب شده یک تصویر نیست <br>";
     $uploadOk=0;
-  }
+  }*/
   if (file_exists($target_file)){
     echo "پرونده ای با همین نام در سرویس دهنده میزبان وجود دارد <br/>";
     $uploadOk = 0 ;
@@ -60,10 +60,26 @@ if($check !== false){
       echo "خطا در ارسال پرونده به سرویس دهنده میزبان رخ داده است <br/>";
     }
   }
-
-
- ?>
-    <?php
+  if ($uploadOk == 1){
+    $query = "INSERT INTO products
+    (pro_code,
+    pro_name,
+    pro_qty,
+    pro_price,
+    pro_image,
+    pro_detail) VALUES
+    ('$pro_code',
+    '$pro_name',
+    '$pro_qty',
+    '$pro_price',
+    '$pro_image',
+    '$pro_detail')";
+  if (mysqli_query($link, $query) === true)
+      echo ("<p style='color:green;'><b>کالا با موفقیت به انبار اضافه شد </b></p>");
+    else
+      echo ("<p style='color:yellow;'><b>خطا در ثبت مشخصات کالا در انبار</b></p>");  
+  }else
+    echo ("<p style='color:red;'><b>خطا در ثبت مشخصات کالا در انبار</b></p>"); 
+mysqli_close($link);
 include('includes/footer.php');
-
-    ?>
+ ?>

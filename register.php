@@ -2,7 +2,7 @@
 if (isset($_SESSION["state_login"]) && $_SESSION["state_login"]===true){ ?>
 
   <script type = "text/javascript">
-     <!--
+     //<!--
         function Redirect() {
            window.location = "404.php";
         }
