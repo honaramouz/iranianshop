@@ -25,7 +25,7 @@ $result = mysqli_query($link,$query);
     توضیحات : <span style="color: green;"><?php echo ($row['pro_detail']); ?></span>
     <br><br>
     <b>
-    <a href="prder.php?id=<?php echo($row['pro_code']); ?>" style="text-decoration: none;">
+    <a href="order.php?id=<?php echo($row['pro_code']); ?>" style="text-decoration: none;">
     سفارش و خرید پستی
     </a>
     </b>
