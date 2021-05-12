@@ -26,7 +26,7 @@ if
    }else
      exit("برخی از فیلد ها مقدار دهی نشده است");
 
-
+$link = mysqli_connect("localhost","root","","shop_db");
 $target_dir = "images/products/";
 $target_file = $target_dir . basename($_FILES["pro_image"]["name"]);
 $uploadOk= 1;
