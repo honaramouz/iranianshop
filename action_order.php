@@ -1,6 +1,6 @@
 <?php
 include("includes/header.php");
-if (!(isset($_SESSION["state_login"]) && $_SESSION["state_login"] === true && $_SESSION["user_type"] == "admin")) {
+if (!(isset($_SESSION["state_login"]) && $_SESSION["state_login"] === true)) {
 ?>
     <script type="text/javascript">
         //<!--
